@@ -12,37 +12,163 @@ public class Topping {
     private List<String> cheeses = new ArrayList<>();
     private List<String> toppings = new ArrayList<>();
     private List<String> sauces = new ArrayList<>();
+    private List<String> extraMeat = new ArrayList<>();
+    private List<String> extraCheese = new ArrayList<>();
 
     private double meatCost = 0;
     private double cheeseCost = 0;
 
 
-    private static final List<String> regularToppingsList = Arrays.asList("lettuce", "peppers",
-            "onions", "tomatoes", "jalapenos", "cucumbers", "pickles", "guacamole",
-            "mushroom");
+    // list of regular toppings
+    public static final List<String> REGULARTOPPINGSLIST = Arrays.asList("lettuce\n",
+            " peppers\n",
+            " onions\n",
+            " tomatoes\n",
+            " jalapenos\n",
+            " cucumbers\n",
+            " pickles\n",
+            " guacamole\n",
+            " mushroom");
 
-    public Toppings(int sandwichSize) {
+    public static final List<String> MEATTOPPINGS = Arrays.asList(" steak\n" +
+            " ham\n" +
+            " salami\n" +
+            " roast beef\n" +
+            " chicken\n" +
+            " bacon");
+
+    public static final List<String> CHEESETOPPINGS = Arrays.asList("american\n" +
+            " provolone\n" +
+            " cheddar\n" +
+            " swiss");
+
+    public static final List<String> SAUCETOPPINGS = Arrays.asList("mayo\n" +
+            " mustard\n",
+            " ketchup\n",
+            " ranch\n",
+            " thousand islands\n",
+            " vinaigrette\n");
+
+    public static final List<String> SIDES = Arrays.asList("au jus\n", "mayo\n" +
+            "- mustard\n" +
+            "Included Included Included\n" +
+            "- ketchup\n" +
+            "- ranch\n" +
+            "- thousand islands\n" +
+            "- vinaigrette\n" +
+            "Sides\n");
+
+
+    public Topping(int sandwichSize) {
         this.sandwichSize = sandwichSize;
     }
 
     public void addMeat(String meat, boolean extra) {
         meats.add(meat);
-        meatCost += getMeatPrice(extra);
+        meatCost += getMeatPrice();
+        if (extra) {
+            meatCost += getExtraMeatPrice();
+            extraMeat.add(meat);
+        }
     }
 
     public void addCheese(String cheese, boolean extra) {
         cheeses.add(cheese);
-        cheeseCost += getCheeseCost(extra);
+        cheeseCost += getCheeseCost();
+        if (extra) {
+            cheeseCost += getExtraCheeseCost();
+            extraCheese.add(cheese);
+        }
     }
 
     public void addTopping (String topping) {
         if (regularToppingsList.contains(topping.toLowerCase())) {
-            regularToppingsList.add(topping);
+            toppings.add(topping);
         }
     }
 
     public void addSauce (String sauce) {
         sauces.add(sauce);
+    }
+
+
+    public double calculateToppingCost() {
+        // adding meat and cheese cost, other toppings are free
+        return meatCost + cheeseCost;
+    }
+
+
+
+    private double getMeatPrice() {
+        switch (sandwichSize){
+            case 4:
+                return 1.00;
+            case 8:
+                return 2.00;
+            case 12:
+                return 3.00;
+            default:
+                return 0;
+
+        }
+    }
+
+    private double getExtraMeatPrice() {
+        switch (sandwichSize) {
+            case 4:
+                return 0.50;
+            case 8:
+                return 1.00;
+            case 12:
+                return 1.50;
+            default:
+                return 0;
+        }
+    }
+
+    private double getCheeseCost() {
+        switch (sandwichSize){
+            case 4:
+                return 0.75;
+            case 8:
+                return 1.50;
+            case 12:
+                return 2.25;
+            default:
+                return 0;
+
+        }
+    }
+
+    private double getExtraCheeseCost() {
+        switch (sandwichSize) {
+            case 4:
+                return 0.30;
+            case 8:
+                return 0.60;
+            case 12:
+                return 0.90;
+            default:
+                return 0;
+        }
+    }
+
+
+    // getters
+    public List<String> getMeats() {
+        return meats;
+    }
+
+    public List<String> getCheeses() {
+        return cheeses;
+    }
+
+    public List<String> getSauces() {
+        return sauces;
+    }
+
+    public List<String> getToppings() {
+        return toppings;
     }
 
 

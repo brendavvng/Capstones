@@ -1,18 +1,27 @@
 package com.pluralsight;
 
+import java.util.List;
+import java.util.Arrays;
+
 public class Chips {
 
     // initializing properties
     private String name;
-    private String size;
-    private double price;
+    // chips are always going to cost 1.50
+    private static final double chipPrice = 1.50;
+
+    // list of chips
+    public static final List<String> CHIPPIES = Arrays.asList("Classic Lays\n",
+            "BBQ Lays\n",
+            "Doritos\n",
+            "Cheetos\n",
+            "SunChips\n");
 
 
     // constructor
-    public Chips(String name, String size, double price) {
+    public Chips(String name) {
         this.name = name;
-        this.size = size;
-        this.price = price;
+
     }
 
     // getters and setters
@@ -20,29 +29,14 @@ public class Chips {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     public double getPrice() {
-        return price;
+        return chipPrice;
     }
 
     @Override
     public String toString() {
-        return size + " " + name + "($" + String.format("%.2f", price) +")";
+        return name + " ($" + String.format("%.2f", chipPrice) + ")";
     }
 
 }

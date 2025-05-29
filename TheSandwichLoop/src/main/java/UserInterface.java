@@ -1,4 +1,5 @@
 import com.pluralsight.Sandwich;
+import com.pluralsight.Topping;
 
 import java.util.Scanner;
 
@@ -16,21 +17,12 @@ public interface UserInterface {
         System.out.println("Welcome to The Sandwich Loop");
 
 
+        // prints out toppings
+        System.out.println(Topping.CHEESETOPPINGS);
+        System.out.println(Topping.MEATTOPPINGS);
+        System.out.println(Topping.SAUCETOPPINGS);
+        System.out.println(Topping.REGULARTOPPINGSLIST);
 
-        // while loop for user input on toppings
-//        while (true) {
-//            System.out.println("Please enter a topping for your sandwich or enter 'none' for no toppings: ");
-//            String userInput = sandwichScanner.nextLine().toLowerCase();
-//
-//            if (userInput.equals("none")) {
-//                break;
-//            }
-//
-//            sandwich.addTopping(userInput);
-        }
-
-
-        // System.out.println("");  print out order summary for the last screen
     }
 
 }

@@ -13,17 +13,10 @@ public class Sandwich {
     private String breadType;
     private int sandwichSize;
     private boolean toasted;
-    private double totalPrice;
-
-    private List<String> meats = new ArrayList<>();
-    private List<String> cheeses = new ArrayList<>();
-    private List<String> toppings = new ArrayList<>();
+    private double basePrice;
+    private Topping toppingsTop;
     private List<String> sauces = new ArrayList<>();
 
-
-    private static final List<String> regularToppingsList = Arrays.asList("lettuce", "peppers",
-            "onions", "tomatoes", "jalapenos", "cucumbers", "pickles", "guacamole",
-            "mushroom");
 
     // constructor: takes bread type, size, toasted
     //   - initialize properties
@@ -38,10 +31,9 @@ public class Sandwich {
         this.sandwichSize = sandwichSize;
         this.toasted = toasted;
         // adding base price to total price
-        this.totalPrice = getBasePrice();
+        this.basePrice = getBasePrice();
+        this.toppingsTop = new Topping(sandwichSize);
     }
-
-
 
 
     private double getBasePrice() {
@@ -66,39 +58,7 @@ public class Sandwich {
     //   - add meat(s)
     //   - what is the price based on size and whether it's extra?
     public void addMeat(String meat, boolean extra) {
-        meats.add(meat);
-        // will always charge w base price for meats
-        totalPrice += getMeatPrice();
-        if (extra) {
-            totalPrice += getExtraMeatPrice();
-        }
-    }
-
-    private double getMeatPrice() {
-        switch (sandwichSize){
-            case 4:
-                return 1.00;
-            case 8:
-                return 2.00;
-            case 12:
-                return 3.00;
-            default:
-                return 0;
-
-        }
-    }
-
-    private double getExtraMeatPrice() {
-        switch (sandwichSize) {
-            case 4:
-                return 0.50;
-            case 8:
-                return 1.00;
-            case 12:
-                return 1.50;
-            default:
-                return 0;
-        }
+        toppingsTop.addMeat(meat, extra);
     }
 
 
@@ -106,54 +66,16 @@ public class Sandwich {
     //   - add cheese(s)
     //   - add price depending on size and whether it's extra
     public void addCheese(String cheese, boolean extra) {
-        cheeses.add(cheese);
-        totalPrice += getCheesePrice();
-        if (extra) {
-            totalPrice += getExtraCheese();
-        }
+        toppingsTop.addCheese(cheese, extra);
     }
-
-    private double getCheesePrice() {
-        switch (sandwichSize){
-            case 4:
-                return 0.75;
-            case 8:
-                return 1.50;
-            case 12:
-                return 2.25;
-            default:
-                return 0;
-
-        }
-    }
-
-    private double getExtraCheese () {
-        switch (sandwichSize) {
-            case 4:
-                return 0.30;
-            case 8:
-                return 0.60;
-            case 12:
-                return 0.90;
-            default:
-                return 0;
-        }
-    }
-
-
 
 
     // addTopping method:
     //   - add topping(s)
     //   - no charge
     public void addTopping(String topping) {
-        if (regularToppingsList.contains(topping.toLowerCase())) {
-            toppings.add(topping);
-        } else {
-            System.out.println("Invalid topping: " + topping);
-        }
+        toppingsTop.addTopping(topping);
     }
-
 
     // addSauce method:
     //   - add sauce(s)
@@ -166,9 +88,20 @@ public class Sandwich {
     // getPrice method:
     //   - return current total price
     public double getPrice() {
-        return totalPrice;
+        return basePrice + toppingsTop.calculateToppingCost();
     }
 
+    public String getBreadType() {
+        return breadType;
+    }
+
+    public int getSandwichSize() {
+        return sandwichSize;
+    }
+
+    public Topping getToppingsTop () {
+        return toppingsTop;
+    }
 
     // getSummary method:
     //   - return a string with all sandwich details and price
@@ -183,28 +116,21 @@ public class Sandwich {
         summary.append("Bread Size: ").append(sandwichSize).append(" inches \n");
         summary.append("Toasted: ").append(toasted ? "Yes" : "No").append("\n");
 
-        summary.append("Meats: ");
         // if meats is empty, return 'none' otherwise return string of meats
-        summary.append(meats.isEmpty() ? "None" : String.join(", ", meats));
-        summary.append("\n");
+        summary.append("Meats: ").append(toppingsTop.getMeats()).append("\n");
 
         // if cheeses is empty, return 'none', otherwise return string of cheeses
-        summary.append("Cheeses: ");
-        summary.append(cheeses.isEmpty() ? "None" : String.join(", ", cheeses));
-        summary.append("\n");
+        summary.append("Cheeses: ").append(toppingsTop.getCheeses()).append("\n");
 
-        summary.append("Toppings: ");
-        summary.append(toppings.isEmpty() ? "None" : String.join(", ", toppings));
-        summary.append("\n");
+        summary.append("Toppings: ").append(toppingsTop.getToppings()).append("\n");
 
-        summary.append("Sauces: ");
-        summary.append(sauces.isEmpty() ? "None" : String.join(", ", sauces));
-        summary.append("\n");
+        summary.append("Sauces: ").append(sauces.isEmpty() ? "None" : String.join(", ", sauces)).append("\n");
+        summary.append(String.format("Total Price: $%.2f\n", getPrice()));
 
-        summary.append(String.format("Total Price: $%.2f\n", totalPrice));
         summary.append(".¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸");
 
         // returning the full string input
         return summary.toString();
     }
+
 }
