@@ -1,6 +1,7 @@
-package com.pluralsight;
-import java.util.List;
+package com.pluralsight.models;
+
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Drinks {

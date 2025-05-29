@@ -1,5 +1,4 @@
-import com.pluralsight.Sandwich;
-import com.pluralsight.Topping;
+package com.pluralsight.ui;
 
 import java.util.Scanner;
 

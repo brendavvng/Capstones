@@ -1,4 +1,5 @@
-package com.pluralsight;
+package com.pluralsight.models;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,7 +44,7 @@ public class Topping {
             " swiss");
 
     public static final List<String> SAUCETOPPINGS = Arrays.asList("mayo\n" +
-            " mustard\n",
+                    " mustard\n",
             " ketchup\n",
             " ranch\n",
             " thousand islands\n",
