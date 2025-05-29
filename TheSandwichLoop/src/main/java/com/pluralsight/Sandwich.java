@@ -20,6 +20,11 @@ public class Sandwich {
     private List<String> toppings = new ArrayList<>();
     private List<String> sauces = new ArrayList<>();
 
+
+    private static final List<String> regularToppingsList = Arrays.asList("lettuce", "peppers",
+            "onions", "tomatoes", "jalapenos", "cucumbers", "pickles", "guacamole",
+            "mushroom");
+
     // constructor: takes bread type, size, toasted
     //   - initialize properties
     //   - set base price based on size
@@ -36,9 +41,7 @@ public class Sandwich {
         this.totalPrice = getBasePrice();
     }
 
-    private static final List<String> regularToppingsList = Arrays.asList("lettuce", "peppers",
-            "onions", "tomatoes", "jalapenos", "cucumbers", "pickles", "guacamole",
-            "mushroom");
+
 
 
     private double getBasePrice() {
@@ -136,6 +139,7 @@ public class Sandwich {
                 return 0;
         }
     }
+
 
 
 
