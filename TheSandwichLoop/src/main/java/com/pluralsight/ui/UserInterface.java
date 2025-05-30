@@ -79,6 +79,7 @@ public class UserInterface {
 
     public int promptForSize() {
         System.out.println("₊˚ʚ✧ Please choose a size: 4, 8, or 12 inches. ₊˚ʚ✧ ");
+        System.out.println("「4 inch - $5.50, 8 inch - $7.00, 12 inch - $8.50」");
         int size = getIntInput();
         if (size == 4 || size == 8 || size == 12) {
             return size;
@@ -112,6 +113,8 @@ public class UserInterface {
             System.out.println("𓇣 " + meat);
         }
 
+        System.out.println("₊˚ʚ✧ Please note these are premium toppings for an additional cost. ₊˚ʚ✧ ");
+        System.out.println("「4 inch - $1.00, 8 inch - $2.00, 12 inch - $3.00₊」 ");
         System.out.print("₊˚ʚ✧ Please enter the meat you'd like: ₊˚ʚ✧ ");
         return getValidatedInput(meats);
 
@@ -128,6 +131,7 @@ public class UserInterface {
         List<String> cheeseOptions = List.of("american", "swiss", "cheddar", "provolone", "none");
         System.out.println("\n₊˚ʚ✧ List of Cheeses: ₊˚ʚ✧ ");
         cheeseOptions.forEach(option -> System.out.println("𓇣 " + option));
+        System.out.println("₊˚ʚ✧ Please note these are premium toppings for an additional cost. ₊˚ʚ✧ ");
         System.out.print("₊˚ʚ✧ Please enter which cheese you'd like: ₊˚ʚ✧ ");
         return getValidatedInput(cheeseOptions);
     }
