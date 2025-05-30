@@ -1,0 +1,16 @@
+ꕤ Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+  .¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Bread Type: white
+Bread Size: 4 inches 
+Toasted: No
+Meats: steak
+Cheeses: american
+Toppings: None
+Sauces: ranch
+Total Price: $7.25
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: None 
+Chips: None 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $7.25

@@ -1,0 +1,17 @@
+ꕤ Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+  .¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Sandwich Name: Crunchy Chica
+Bread Type: white
+Bread Size: 4 inches 
+Toasted: No
+Meats: steak
+Cheeses: cheddar
+Toppings: None
+Sauces: mayo
+Total Price: $7.75
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: None 
+Chips: None 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $7.75

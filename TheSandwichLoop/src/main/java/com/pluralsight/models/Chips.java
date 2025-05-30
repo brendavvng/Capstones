@@ -11,11 +11,11 @@ public class Chips {
     private static final double chipPrice = 1.50;
 
     // list of chips
-    public static final List<String> CHIPPIES = Arrays.asList("Classic Lays\n",
-            "BBQ Lays\n",
-            "Doritos\n",
-            "Cheetos\n",
-            "SunChips\n");
+    public static final List<String> CHIPPIES = Arrays.asList("Classic Lays",
+            "BBQ Lays",
+            "Doritos",
+            "Cheetos",
+            "SunChips");
 
 
     // constructor

@@ -15,7 +15,7 @@ public class Order {
 
     // constructor:
     //   - initialize the class properties
-    public Order(List<Sandwich> sandwiches, List<Chips> chips, List<Drinks> drinks) {
+    public Order() {
         this.sandwiches = new ArrayList<>();
         this.chips = new ArrayList<>();
         this.drinks = new ArrayList<>();
@@ -83,9 +83,8 @@ public class Order {
         StringBuilder orderSummary = new StringBuilder();
 
         // append to add onto string builder
-        orderSummary.append("Order Summary \n");
+        orderSummary.append("ꕤ Order Summary \n");
         orderSummary.append(".¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸\n");
-        orderSummary.append("Sandwiches: \n");
         if (sandwiches.isEmpty()) {
             // if no sandwiches, will print 'none'
             orderSummary.append("None \n");
@@ -97,7 +96,7 @@ public class Order {
                         .append("\n");
             }
         }
-        orderSummary.append("Drinks: \n");
+        orderSummary.append("Drinks: ");
         if (drinks.isEmpty()) {
             // if no drinks, will print out 'none'
             orderSummary.append("None \n");
@@ -112,7 +111,7 @@ public class Order {
             }
         }
 
-        orderSummary.append("Chips: \n");
+        orderSummary.append("Chips: ");
         if (chips.isEmpty()) {
             orderSummary.append("None \n");
         } else {

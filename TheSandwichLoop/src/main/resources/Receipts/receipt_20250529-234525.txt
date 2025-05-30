@@ -1,0 +1,16 @@
+ꕤ Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+  .¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Bread Type: white
+Bread Size: 4 inches 
+Toasted: Yes
+Meats: chicken
+Cheeses: None
+Toppings: None
+Sauces: mayo
+Total Price: $6.50
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: None 
+Chips: None 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $6.50

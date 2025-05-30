@@ -10,12 +10,19 @@ public class Sandwich {
     // store meats, cheeses, toppings, sauces
     // keep track of total price
 
+    // property for name of sandwich user can type in
+    private String name;
+
     private String breadType;
     private int sandwichSize;
     private boolean toasted;
     private double basePrice;
+    // manages meats, cheeses, and regular toppings
     private Topping toppingsTop;
+    // list of sauces
     private List<String> sauces = new ArrayList<>();
+    // list of sides
+    private List<String> sides = new ArrayList<>();
 
 
     // constructor: takes bread type, size, toasted
@@ -30,12 +37,22 @@ public class Sandwich {
         this.breadType = breadType;
         this.sandwichSize = sandwichSize;
         this.toasted = toasted;
-        // adding base price to total price
+        // setting base price based on the size
         this.basePrice = getBasePrice();
+        // initializing toppings w/ sandwich size, helps handle the prices
         this.toppingsTop = new Topping(sandwichSize);
     }
 
+    // getter & setter for user input for sandwich name
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    // base prices for sandwiche sizes
     private double getBasePrice() {
         switch (sandwichSize) {
             case 4:
@@ -44,6 +61,7 @@ public class Sandwich {
                 return 7.00;
             case 12:
                 return 8.50;
+            // if invalid size, will default to this:
             default:
                 return 0;
         }
@@ -55,7 +73,7 @@ public class Sandwich {
 
 
     // addMeat method:
-    //   - add meat(s)
+    //   - add meat(s) to sandwich
     //   - what is the price based on size and whether it's extra?
     public void addMeat(String meat, boolean extra) {
         toppingsTop.addMeat(meat, extra);
@@ -63,7 +81,7 @@ public class Sandwich {
 
 
     // addCheese method:
-    //   - add cheese(s)
+    //   - add cheese(s) to sandwich
     //   - add price depending on size and whether it's extra
     public void addCheese(String cheese, boolean extra) {
         toppingsTop.addCheese(cheese, extra);
@@ -71,7 +89,7 @@ public class Sandwich {
 
 
     // addTopping method:
-    //   - add topping(s)
+    //   - add topping(s) to sandwich
     //   - no charge
     public void addTopping(String topping) {
         toppingsTop.addTopping(topping);
@@ -84,6 +102,10 @@ public class Sandwich {
         sauces.add(sauce);
     }
 
+    // adds sides to order
+    public void addSide(String side) {
+        sides.add(side);
+    }
 
     // getPrice method:
     //   - return current total price
@@ -91,6 +113,7 @@ public class Sandwich {
         return basePrice + toppingsTop.calculateToppingCost();
     }
 
+    // getter for bread type
     public String getBreadType() {
         return breadType;
     }
@@ -98,6 +121,7 @@ public class Sandwich {
     public int getSandwichSize() {
         return sandwichSize;
     }
+
 
     public Topping getToppingsTop () {
         return toppingsTop;
@@ -110,26 +134,48 @@ public class Sandwich {
         StringBuilder summary = new StringBuilder();
 
         // append to add onto string builder
-        summary.append("Sandwich Order Summary \n");
         summary.append(".¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸\n");
+
+        // displays sandwich name if set to a name
+        if (name != null && !name.isEmpty()) {
+            summary.append("Sandwich Name: ").append(name).append("\n");
+        }
+
+        // adding bread type info
         summary.append("Bread Type: ").append(breadType).append("\n");
+        // adding bread size info
         summary.append("Bread Size: ").append(sandwichSize).append(" inches \n");
+        // adding if toasted or not
         summary.append("Toasted: ").append(toasted ? "Yes" : "No").append("\n");
 
         // if meats is empty, return 'none' otherwise return string of meats
-        summary.append("Meats: ").append(toppingsTop.getMeats()).append("\n");
+        summary.append("Meats: ").append(toppingsTop.getMeats().isEmpty() ? "None" :
+                String.join(", ", toppingsTop.getMeats())).append("\n");
 
         // if cheeses is empty, return 'none', otherwise return string of cheeses
-        summary.append("Cheeses: ").append(toppingsTop.getCheeses()).append("\n");
+        summary.append("Cheeses: ").append(toppingsTop.getCheeses().isEmpty() ? "None" :
+                String.join(", ", toppingsTop.getCheeses())).append("\n");
 
-        summary.append("Toppings: ").append(toppingsTop.getToppings()).append("\n");
+        // adding toppings to list, if empty will print 'none', otherwise return string of toppings
+        summary.append("Toppings: ").append(toppingsTop.getToppings().isEmpty() ? "None" :
+                String.join(", ", toppingsTop.getToppings())).append("\n");
 
-        summary.append("Sauces: ").append(sauces.isEmpty() ? "None" : String.join(", ", sauces)).append("\n");
+
+        // adding sauces to list if empty will print 'none', otherwise return string of sauces
+        summary.append("Sauces: ").append(sauces.isEmpty() ? "None" :
+                String.join(", ", sauces)).append("\n");
+
+        // if sides list exists and is not empty, add to existing list
+        if (sides != null && !sides.isEmpty()) {
+            summary.append("Sides: ").append(String.join(", ", sides)).append("\n");
+        }
+
+        // adding summary of total price and formatting to 2 decimal places
         summary.append(String.format("Total Price: $%.2f\n", getPrice()));
 
         summary.append(".¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸");
 
-        // returning the full string input
+        // returning the full string of summary
         return summary.toString();
     }
 

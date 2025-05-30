@@ -21,43 +21,47 @@ public class Topping {
 
 
     // list of regular toppings
-    public static final List<String> REGULARTOPPINGSLIST = Arrays.asList("lettuce\n",
-            " peppers\n",
-            " onions\n",
-            " tomatoes\n",
-            " jalapenos\n",
-            " cucumbers\n",
-            " pickles\n",
-            " guacamole\n",
-            " mushroom");
+    public static final List<String> REGULARTOPPINGSLIST = Arrays.asList("lettuce",
+            " peppers",
+            " onions",
+            " tomatoes",
+            " jalapenos",
+            " cucumbers",
+            " pickles",
+            " guacamole",
+            " mushrooms",
+            " none");
 
-    public static final List<String> MEATTOPPINGS = Arrays.asList(" steak\n" +
-            " ham\n" +
-            " salami\n" +
-            " roast beef\n" +
-            " chicken\n" +
-            " bacon");
+    public static final List<String> MEATTOPPINGS = Arrays.asList(" steak",
+            " ham",
+            " salami",
+            " roast beef",
+            " chicken",
+            " bacon",
+            "none");
 
-    public static final List<String> CHEESETOPPINGS = Arrays.asList("american\n" +
-            " provolone\n" +
-            " cheddar\n" +
-            " swiss");
+    public static final List<String> CHEESETOPPINGS = Arrays.asList("american",
+            " provolone",
+            " cheddar",
+            " swiss",
+            "none");
 
-    public static final List<String> SAUCETOPPINGS = Arrays.asList("mayo\n" +
-                    " mustard\n",
-            " ketchup\n",
-            " ranch\n",
-            " thousand islands\n",
-            " vinaigrette\n");
+    public static final List<String> SAUCETOPPINGS = Arrays.asList("mayo",
+            " mustard",
+            " ketchup",
+            " ranch",
+            " thousand islands",
+            " vinaigrette",
+             "none");
 
-    public static final List<String> SIDES = Arrays.asList("au jus\n", "mayo\n" +
-            "- mustard\n" +
-            "Included Included Included\n" +
-            "- ketchup\n" +
-            "- ranch\n" +
-            "- thousand islands\n" +
-            "- vinaigrette\n" +
-            "Sides\n");
+    public static final List<String> SIDES = Arrays.asList("au jus", "mayo" +
+            "- mustard" +
+            "Included Included Included" +
+            "- ketchup" +
+            "- ranch" +
+            "- thousand islands" +
+            "- vinaigrette",
+            "none");
 
 
     public Topping(int sandwichSize) {
@@ -65,31 +69,37 @@ public class Topping {
     }
 
     public void addMeat(String meat, boolean extra) {
-        meats.add(meat);
-        meatCost += getMeatPrice();
-        if (extra) {
-            meatCost += getExtraMeatPrice();
-            extraMeat.add(meat);
+        if (!meat.equalsIgnoreCase("none")) {
+            meats.add(meat);
+            meatCost += getMeatPrice();
+            if (extra) {
+                meatCost += getExtraMeatPrice();
+                extraMeat.add(meat);
+            }
         }
     }
 
     public void addCheese(String cheese, boolean extra) {
-        cheeses.add(cheese);
-        cheeseCost += getCheeseCost();
-        if (extra) {
-            cheeseCost += getExtraCheeseCost();
-            extraCheese.add(cheese);
+        if (!cheese.equalsIgnoreCase("none")) {
+            cheeses.add(cheese);
+            cheeseCost += getCheeseCost();
+            if (extra) {
+                cheeseCost += getExtraCheeseCost();
+                extraCheese.add(cheese);
+            }
         }
     }
 
     public void addTopping (String topping) {
-        if (regularToppingsList.contains(topping.toLowerCase())) {
+        if (!topping.equalsIgnoreCase("none") && REGULARTOPPINGSLIST.contains(topping.toLowerCase())) {
             toppings.add(topping);
         }
     }
 
     public void addSauce (String sauce) {
-        sauces.add(sauce);
+        if (!sauce.equalsIgnoreCase("none") && SAUCETOPPINGS.contains(sauce.toLowerCase())) {
+            sauces.add(sauce);
+        }
     }
 
 

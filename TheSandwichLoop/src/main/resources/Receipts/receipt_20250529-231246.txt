@@ -1,0 +1,19 @@
+ꕤ Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+  .¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Bread Type: white
+Bread Size: 4 inches 
+Toasted: No
+Meats: steak, bacon
+Cheeses: american
+Toppings: lettuce
+Sauces: mayo
+Sides: ranch
+Total Price: $9.05
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: 
+  Large Dr Pepper($3.00) - $3.00
+Chips: 
+  Classic Lays ($1.50) - $1.50
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $13.55

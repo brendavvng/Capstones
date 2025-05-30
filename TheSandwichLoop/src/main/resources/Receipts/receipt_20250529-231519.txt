@@ -1,0 +1,19 @@
+ꕤ Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+  .¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Bread Type: wrap
+Bread Size: 12 inches 
+Toasted: Yes
+Meats: chicken, bacon, salami
+Cheeses: swiss, cheddar
+Toppings: None
+Sauces: mayo
+Sides: thousand islands
+Total Price: $22.00
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: 
+  Medium Water($2.50) - $2.50
+Chips: 
+  Cheetos ($1.50) - $1.50
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $26.00

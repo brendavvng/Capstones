@@ -1,0 +1,21 @@
+Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Sandwiches: 
+  Sandwich Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Bread Type: white
+Bread Size: 12 inches 
+Toasted: Yes
+Meats: steak, roast beef, bacon
+Cheeses: provolone
+Toppings: lettuce
+Sauces: mayo
+Sides: ranch
+Total Price: $23.65
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: 
+None 
+Chips: 
+None 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $23.65

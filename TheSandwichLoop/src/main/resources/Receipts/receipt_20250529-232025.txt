@@ -1,0 +1,18 @@
+ꕤ Order Summary 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+  .¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Bread Type: rye
+Bread Size: 8 inches 
+Toasted: No
+Meats: steak
+Cheeses: swiss
+Toppings: lettuce
+Sauces: vinaigrette, ranch
+Total Price: $10.50
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Drinks: 
+None 
+Chips: 
+None 
+.¸¸.*♡*.¸¸.*☆*¸.*♡*.¸¸.*☆*.¸¸.*♡*.¸
+Total: $10.50

@@ -12,13 +12,13 @@ public class Drinks {
     private double price;
 
     // list of drinks
-    public static final List<String> DRINKSSS = Arrays.asList("Coke\n",
-            "Pepsi\n",
-            "Dr Pepper\n",
-            "Sprite\n",
-            "Sweet Tea\n",
-            "Lemonade\n",
-            "Water\n");
+    public static final List<String> DRINKSSS = Arrays.asList("Coke",
+            "Pepsi",
+            "Dr Pepper",
+            "Sprite",
+            "Sweet Tea",
+            "Lemonade",
+            "Water");
 
     // constructor
     // only doing name and size since price is set
